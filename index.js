@@ -74,6 +74,11 @@ app.delete('/persons/:id', (req, res) => {
   res.status(204).end();
 });
 
+app.get('/info', (req, res) => {
+  let date = new Date();
+  res.send(`<p>puhelinluettelossa ${persons.length} henkilön tiedot</p><p>${date}</p>`);
+});
+
 const port = 3001;
 app.listen(port, () =>
   console.log(`Server running on port ${port}`)
